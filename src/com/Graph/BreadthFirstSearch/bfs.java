@@ -3,6 +3,7 @@ package com.Graph.BreadthFirstSearch;
 import com.Graph.Graph;
 
 import java.sql.ClientInfoStatus;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -20,7 +21,7 @@ public class bfs {
         visited[s] = true;
         queue.add(s);
         while(queue.size() != 0){
-            s = queue.poll();
+            s = queue.poll();//This will return but not delete the element
             System.out.println(s+" ");
             Iterator<Integer> i = g.adjListArray[s].listIterator();
             while(i.hasNext()){
