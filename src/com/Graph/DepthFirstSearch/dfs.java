@@ -13,15 +13,14 @@ public class dfs {
     public void DFSTraversal(int s, boolean visited[]){
         visited[s] = true;
         System.out.println(s+" ");
+
         Iterator<Integer> i = g.adjListArray[s].listIterator();
-        while(i.hasNext())
-        {
+        while(i.hasNext()){
             int n = i.next();
             if(!visited[n]){
                 DFSTraversal(n, visited);
             }
         }
-
     }
     public void searchDFS(int s){
         boolean visited[] = new boolean[g.getV()];

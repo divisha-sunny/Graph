@@ -15,20 +15,18 @@ public class bfs {
     }
 
     public void searchBFS(int s) {
-        boolean visited[] = new boolean[g.getV()]; // By default its false
+        boolean visited[] = new boolean[g.getV()];
         Queue<Integer> queue = new LinkedList<Integer>();
-        // Mark source node as visited first
         visited[s] = true;
         queue.add(s);
         while(queue.size() != 0){
-            s = queue.poll(); //We used poll() to return and delete that element
+            s = queue.poll();
             System.out.println(s+" ");
-            // For getting adjacent elements we should use Iterator
             Iterator<Integer> i = g.adjListArray[s].listIterator();
             while(i.hasNext()){
-                int n=i.next();
+                int n = i.next();
                 if(!visited[n]){
-                    visited[n] = true;
+                    visited[n]=true;
                     queue.add(n);
                 }
             }
